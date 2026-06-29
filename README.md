@@ -213,16 +213,6 @@ The ontology was verified using the **HermiT Reasoner**.
 
 ---
 
-# 📊 Ontology Visualization
-
-The ontology graph generated using the **OntoGraf** plugin is shown below.
-
-> Save your exported graph as **OntologyGraph.png** in this repository.
-
-![Ontology Graph](OntologyGraph.png)
-
----
-
 # 📂 Repository Structure
 
 ```
