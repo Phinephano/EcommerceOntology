@@ -1,0 +1,577 @@
+@prefix : <http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#> .
+
+<http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#containsItem
+:containsItem rdf:type owl:ObjectProperty ;
+              rdfs:domain :ShoppingCart ;
+              rdfs:range :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#containsProduct
+:containsProduct rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Order ;
+                 rdfs:range :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasAddress
+:hasAddress rdf:type owl:ObjectProperty ;
+            rdfs:domain :Customer ;
+            rdfs:range :Address .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasPayment
+:hasPayment rdf:type owl:ObjectProperty ;
+            rdfs:domain :Order ;
+            rdfs:range :Payment .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasShipment
+:hasShipment rdf:type owl:ObjectProperty ;
+             rdfs:domain :Order ;
+             rdfs:range :Shipment .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasShoppingCart
+:hasShoppingCart rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Customer ;
+                 rdfs:range :ShoppingCart .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#placesOrder
+:placesOrder rdf:type owl:ObjectProperty ;
+             rdfs:domain :Customer ;
+             rdfs:range :Order .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#reviewsProduct
+:reviewsProduct rdf:type owl:ObjectProperty ;
+                rdfs:domain :Review ;
+                rdfs:range :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#sells
+:sells rdf:type owl:ObjectProperty ;
+       rdfs:domain :Seller ;
+       rdfs:range :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#writesReview
+:writesReview rdf:type owl:ObjectProperty ;
+              rdfs:domain :Customer ;
+              rdfs:range :Review .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasAddressText
+:hasAddressText rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Address ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasComment
+:hasComment rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Review ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasCustomerName
+:hasCustomerName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Customer ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Customer ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasOrderDate
+:hasOrderDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Order ;
+              rdfs:range xsd:date .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasPaymentMethod
+:hasPaymentMethod rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Payment ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasPaymentStatus
+:hasPaymentStatus rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Payment ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasPhoneNumber
+:hasPhoneNumber rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Customer ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasPrice
+:hasPrice rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Product ;
+          rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasProductName
+:hasProductName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Product ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasRating
+:hasRating rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Review ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasShipmentStatus
+:hasShipmentStatus rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Shipment ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasStockQuantity
+:hasStockQuantity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Product ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#hasTrackingNumber
+:hasTrackingNumber rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Shipment ;
+                   rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Accessory
+:Accessory rdf:type owl:Class ;
+           rdfs:subClassOf :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Address
+:Address rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Book
+:Book rdf:type owl:Class ;
+      rdfs:subClassOf :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Clothing
+:Clothing rdf:type owl:Class ;
+          rdfs:subClassOf :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Customer
+:Customer rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#EBook
+:EBook rdf:type owl:Class ;
+       rdfs:subClassOf :Book .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Electronics
+:Electronics rdf:type owl:Class ;
+             rdfs:subClassOf :Product .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Headphones
+:Headphones rdf:type owl:Class ;
+            rdfs:subClassOf :Accessory .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Keyboard
+:Keyboard rdf:type owl:Class ;
+          rdfs:subClassOf :Accessory .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#KidsClothing
+:KidsClothing rdf:type owl:Class ;
+              rdfs:subClassOf :Clothing .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Laptop
+:Laptop rdf:type owl:Class ;
+        rdfs:subClassOf :Electronics .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#MenClothing
+:MenClothing rdf:type owl:Class ;
+             rdfs:subClassOf :Clothing .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Mouse
+:Mouse rdf:type owl:Class ;
+       rdfs:subClassOf :Accessory .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Order
+:Order rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Payment
+:Payment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#PrintedBook
+:PrintedBook rdf:type owl:Class ;
+             rdfs:subClassOf :Book .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Product
+:Product rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Review
+:Review rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Seller
+:Seller rdf:type owl:Class ;
+        rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Shipment
+:Shipment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#ShoppingCart
+:ShoppingCart rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Smartphone
+:Smartphone rdf:type owl:Class ;
+            rdfs:subClassOf :Electronics .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Tablet
+:Tablet rdf:type owl:Class ;
+        rdfs:subClassOf :Electronics .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#WomenClothing
+:WomenClothing rdf:type owl:Class ;
+               rdfs:subClassOf :Clothing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#AIBook
+:AIBook rdf:type owl:NamedIndividual ,
+                 :PrintedBook ;
+        :hasPrice 60 ;
+        :hasProductName "Artificial Intelligence Fundamentals" ;
+        :hasStockQuantity 45 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#AddressAlice
+:AddressAlice rdf:type owl:NamedIndividual ,
+                       :Address ;
+              :hasAddressText "Via Roma 10, Verona, Italy" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#AddressBob
+:AddressBob rdf:type owl:NamedIndividual ,
+                     :Address ;
+            :hasAddressText "Via Roma 10, Verona, Italy" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#AddressCharlie
+:AddressCharlie rdf:type owl:NamedIndividual ,
+                         :Address .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#AliceJohnson
+:AliceJohnson rdf:type owl:NamedIndividual ,
+                       :Customer ;
+              :hasAddress :AddressAlice ;
+              :hasShoppingCart :Cart001 ;
+              :placesOrder :Order001 ;
+              :writesReview :Review001 ;
+              :hasCustomerName "Alice Johnson" ;
+              :hasEmail "alice@gmail.com" ;
+              :hasPhoneNumber "+393331234567" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#BlueTShirt
+:BlueTShirt rdf:type owl:NamedIndividual ,
+                     :MenClothing ;
+            :hasPrice 25 ;
+            :hasProductName "Blue T-Shirt" ;
+            :hasStockQuantity 50 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#BobSmith
+:BobSmith rdf:type owl:NamedIndividual ,
+                   :Customer ;
+          :hasAddress :AddressBob ;
+          :hasShoppingCart :Cart002 ;
+          :placesOrder :Order002 ;
+          :writesReview :Review002 ;
+          :hasCustomerName "Bob Smith" ;
+          :hasEmail "bob@gmail.com" ;
+          :hasPhoneNumber "+393441234567" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#BookWorld
+:BookWorld rdf:type owl:NamedIndividual ,
+                    :Seller ;
+           :sells :AIBook ,
+                  :OWLGuide .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Cart001
+:Cart001 rdf:type owl:NamedIndividual ,
+                  :ShoppingCart ;
+         :containsItem :DellXPS13 ,
+                       :MechanicalKeyboard .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Cart002
+:Cart002 rdf:type owl:NamedIndividual ,
+                  :ShoppingCart ;
+         :containsItem :BlueTShirt ,
+                       :iPhone15 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Cart003
+:Cart003 rdf:type owl:NamedIndividual ,
+                  :ShoppingCart ;
+         :containsItem :SonyHeadphones ,
+                       :iPadAir .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#CharlieBrown
+:CharlieBrown rdf:type owl:NamedIndividual ,
+                       :Customer ;
+              :hasAddress :AddressCharlie ;
+              :hasShoppingCart :Cart003 ;
+              :placesOrder :Order003 ;
+              :writesReview :Review003 ;
+              :hasCustomerName "Charlie Brown" ;
+              :hasEmail "charlie@gmail.com" ;
+              :hasPhoneNumber "+393334445566" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#DellXPS13
+:DellXPS13 rdf:type owl:NamedIndividual ,
+                    :Laptop ;
+           :hasPrice 1299.99 ;
+           :hasProductName "Dell XPS 13" ;
+           :hasStockQuantity 20 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#FashionHub
+:FashionHub rdf:type owl:NamedIndividual ,
+                     :Seller ;
+            :sells :BlueTShirt ,
+                   :KidsJacket ,
+                   :WomenDress .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#KidsJacket
+:KidsJacket rdf:type owl:NamedIndividual ,
+                     :KidsClothing ;
+            :hasPrice 40 ;
+            :hasProductName "Kids Jacket" ;
+            :hasStockQuantity 22 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#LogitechMouse
+:LogitechMouse rdf:type owl:NamedIndividual ,
+                        :Mouse ;
+               :hasPrice 35 ;
+               :hasProductName "Logitech Mouse" ;
+               :hasStockQuantity 60 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#MechanicalKeyboard
+:MechanicalKeyboard rdf:type owl:NamedIndividual ,
+                             :Keyboard ;
+                    :hasPrice 89.99 ;
+                    :hasProductName "Mechanical Keyboard" ;
+                    :hasStockQuantity 60 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#OWLGuide
+:OWLGuide rdf:type owl:NamedIndividual ,
+                   :EBook ;
+          :hasPrice 18 ;
+          :hasProductName "OWL Programming Guide" ;
+          :hasStockQuantity 999 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Order001
+:Order001 rdf:type owl:NamedIndividual ,
+                   :Order ;
+          :containsProduct :DellXPS13 ,
+                           :MechanicalKeyboard ;
+          :hasPayment :Payment001 ;
+          :hasShipment :Shipment001 ;
+          :hasOrderDate "2026-06-28"^^xsd:date .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Order002
+:Order002 rdf:type owl:NamedIndividual ,
+                   :Order ;
+          :containsProduct :BlueTShirt ,
+                           :iPhone15 ;
+          :hasPayment :Payment002 ;
+          :hasShipment :Shipment002 ;
+          :hasOrderDate "2026-06-30"^^xsd:date .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Order003
+:Order003 rdf:type owl:NamedIndividual ,
+                   :Order ;
+          :containsProduct :SonyHeadphones ,
+                           :iPadAir ;
+          :hasPayment :Payment003 ;
+          :hasShipment :Shipment003 ;
+          :hasOrderDate "2026-06-30"^^xsd:date .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Payment001
+:Payment001 rdf:type owl:NamedIndividual ,
+                     :Payment ;
+            :hasPaymentMethod "Credit Card" ;
+            :hasPaymentStatus "Completed" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Payment002
+:Payment002 rdf:type owl:NamedIndividual ,
+                     :Payment ;
+            :hasPaymentMethod "PayPal" ;
+            :hasPaymentStatus "Pending" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Payment003
+:Payment003 rdf:type owl:NamedIndividual ,
+                     :Payment ;
+            :hasPaymentMethod "Credit Card" ;
+            :hasPaymentStatus "Completed" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Review001
+:Review001 rdf:type owl:NamedIndividual ,
+                    :Review ;
+           :reviewsProduct :DellXPS13 ;
+           :hasComment "Excellent product and fast delivery." ;
+           :hasRating 5 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Review002
+:Review002 rdf:type owl:NamedIndividual ,
+                    :Review ;
+           :reviewsProduct :iPhone15 ;
+           :hasComment "Battery drians too fast" ;
+           :hasRating 4 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Review003
+:Review003 rdf:type owl:NamedIndividual ,
+                    :Review ;
+           :reviewsProduct :SonyHeadphones ;
+           :hasComment "Excellent headphones with great sound quality." ;
+           :hasRating 5 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Shipment001
+:Shipment001 rdf:type owl:NamedIndividual ,
+                      :Shipment ;
+             :hasShipmentStatus "Delivered" ;
+             :hasTrackingNumber "TRK123456789" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Shipment002
+:Shipment002 rdf:type owl:NamedIndividual ,
+                      :Shipment ;
+             :hasShipmentStatus "Processing" ;
+             :hasTrackingNumber "TRK987654" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#Shipment003
+:Shipment003 rdf:type owl:NamedIndividual ,
+                      :Shipment ;
+             :hasShipmentStatus "Delivered" ;
+             :hasTrackingNumber "TRK555777" .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#SonyHeadphones
+:SonyHeadphones rdf:type owl:NamedIndividual ,
+                         :Headphones ;
+                :hasPrice 120 ;
+                :hasProductName "Sony Headphones" ;
+                :hasStockQuantity 25 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#TechStore
+:TechStore rdf:type owl:NamedIndividual ,
+                    :Seller ;
+           :sells :DellXPS13 ,
+                  :MechanicalKeyboard ,
+                  :iPhone15 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#WomenDress
+:WomenDress rdf:type owl:NamedIndividual ,
+                     :WomenClothing ;
+            :hasPrice 55 ;
+            :hasProductName "Women's Dress" ;
+            :hasStockQuantity 18 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#iPadAir
+:iPadAir rdf:type owl:NamedIndividual ,
+                  :Tablet ;
+         :hasPrice 699 ;
+         :hasProductName "iPad Air" ;
+         :hasStockQuantity 20 .
+
+
+###  http://www.semanticweb.org/finhasdemissiebekele/ontologies/2026/5/EcommerceOntology#iPhone15
+:iPhone15 rdf:type owl:NamedIndividual ,
+                   :Smartphone ;
+          :hasPrice 999.99 ;
+          :hasProductName "iPhone 15" ;
+          :hasStockQuantity 35 .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
